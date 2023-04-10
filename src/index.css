@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Alike');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+    transition-property: opacity, transform;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    color: black;
+    font-size: 80px;
+    padding: 5px 0;
+}
+.inputHolder {
+    margin: 15px 0;
+}
+.mainWrapper {
+    padding: 0 10px;
+}
+.mainContent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+@media (max-width: 800px) {
+    .mainContent {
+        flex-direction: column;
+   }
+}
+.inputHolder {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    gap: 20px;
+}
+
+.inputHolder .uploadInput {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+}
+.inputHolder .or {
+    font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  font-size: large;
+  align-items: center;
+  display: inline-flex;
+}
+  
+.inputHolder .imageURL{
+    font-family: 'JetBrains Mono', monospace;
+  line-height: 1;
+  padding: 0.875rem 2rem;
+  white-space: normal;
+  box-shadow: 0 0 0 0 #0003, 0 0 0 0 #00000024, 0 0 0 0 #0000001f;
+  background-color: #a1caff;
+  color: #373333;
+  box-sizing: border-box;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  overflow: visible;
+}
+.imageURL::placeholder{
+    font-family: 'JetBrains Mono', monospace;
+    color: black;
+  }
+
+.inputHolder .uploadImage {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1;
+    padding: 0.875rem 2rem;
+    white-space: normal;
+    box-shadow: 0 0 0 0 #0003, 0 0 0 0 #00000024, 0 0 0 0 #0000001f;
+    background-color: #1a73e8;
+    color: #fff;
+    box-sizing: border-box;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    overflow: visible;
+}
+.imageHolder {
+    width: 30%;
+    display: block;
+    flex: 0 0 30%;
+    max-width: 700px;
+    height: 70vmin;
+}
+@media (max-width: 800px) {
+    .imageHolder {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+   }
+}
+.imageHolder:empty {
+    display: none;
+}
+.imageHolder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.resultsHolder {
+    padding: 30px;
+}
+@media (max-width: 800px) {
+    .resultsHolder {
+        width: 100%;
+        padding: 0;
+   }
+}
+.resultsHolder .result {
+    border: 1px solid #333;
+    margin: 0 0 10px;
+    padding: 10px;
+}
+.resultsHolder .result:first-of-type {
+    border-color: #333;
+    background-color: #333;
+}
+.resultsHolder .result:first-of-type .name {
+    color: #fff;
+}
+.resultsHolder .result:first-of-type .confidence {
+    color: #dfdfdf;
+}
+.resultsHolder .result .name {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.resultsHolder .result .confidence {
+    display: block;
+    font-weight: 300;
+}
+.resultsHolder .result .confidence .bestGuess {
+    background: #fff;
+    padding: 2px 6px;
+    color: #333;
+    margin-left: 3px;
+}
+.button {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1;
+    padding: 0.875rem 2rem;
+    box-shadow: 0 0 0 0 #0003, 0 0 0 0 #00000024, 0 0 0 0 #0000001f;
+    background-color: #1a73e8;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.recentPredictions {
+    margin: 40px 0 0;
+    background: #b7f0ee;
+    padding: 10px;
+}
+.recentPredictions h2 {
+    color: #111;
+    font-size: 26px;
+    margin: 10px 0;
+}
+.recentPredictions .recentImages {
+    display: flex;
+    flex-wrap: wrap;
+}
+.recentPredictions .recentPrediction {
+    flex: 0 0 20%;
+    cursor: pointer;
+}
+@media (max-width: 1100px) {
+    .recentPredictions .recentPrediction {
+        flex: 0 0 25%;
+   }
+}
+@media (max-width: 870px) {
+    .recentPredictions .recentPrediction {
+        flex: 0 0 33.3%;
+   }
+}
+@media (max-width: 700px) {
+    .recentPredictions .recentPrediction {
+        flex: 0 0 50%;
+   }
+}
+.recentPredictions .recentPrediction img {
+    display: block;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+@media (max-width: 700px) {
+    .recentPredictions .recentPrediction img {
+        height: 260px;
+   }
+}
+
+.smallDescription{
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.result{
+    font-size: 20px;
+}
