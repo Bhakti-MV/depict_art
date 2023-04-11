@@ -103,7 +103,7 @@ function App() {
   return (
     <center>
     <div className="App">
-      <h1 className="header">Depict Art</h1>
+      <a href="public\index.html" className="header">Depict Art</a>
       <div className="inputHolder">
         <input className="uploadInput" type="file" accept="image/*" capture="camera" onChange={uploadImage} ref={fileInputtRef}/>
         <button className="uploadImage" onClick={triggerUpload}>Upload Art</button>
