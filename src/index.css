@@ -23,6 +23,7 @@ body {
     color: black;
     font-size: 80px;
     padding: 5px 0;
+    text-decoration: none;
 }
 .inputHolder {
     margin: 15px 0;
